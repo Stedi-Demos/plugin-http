@@ -1,0 +1,13 @@
+{
+  "instanceId": "brandx",
+  "credentials": {
+    "accessToken": "smashcessToken"
+  },
+  "concurrencyGroups": [
+    {
+      "name": "default",
+      "maxConcurrentOperations": 2,
+      "default": true
+    }
+  ]
+}

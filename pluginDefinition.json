@@ -1,0 +1,62 @@
+{
+  "name": "HTTP",
+  "pluginId": "http",
+  "description": "Basic HTTP delivery pluing",
+  "version": "0.1.0",
+  "credentialsSchema": {
+    "type": "object",
+    "allowAdditionalProperties": true,
+    "properties": {
+      "baseURL": {
+        "type": "string"
+      }
+    },
+    "required": ["baseURL"]
+  },
+  "model": [
+    {
+      "namespace": "default",
+      "operations": {
+        "deliver": {
+          "implementedBy": {
+            "type": "function",
+            "functionName": "deliver"
+          },
+          "input": {
+            "inputSchema": {},
+            "parametersSchema": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "enum": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+                },
+                "path": {
+                  "type": "string"
+                },
+                "headers": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                },
+                "query": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "output": {
+            "outputSchema": {},
+            "deduplication": {
+              "enabled": false
+            }
+          }
+        }
+      }
+    }
+  ]
+}
