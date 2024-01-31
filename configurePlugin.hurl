@@ -7,7 +7,7 @@ file,pluginDefinition.json;
 HTTP 200
 
 # create an instance for brandx
-POST {{PLUGINS_BASE_URL}}/plugins/http
+POST {{PLUGINS_BASE_URL}}/plugins/stedi-http
 Content-Type: application/json
 Authorization: Key {{STEDI_API_KEY}}
 [Options]

@@ -1,38 +1,36 @@
 {
   "name": "HTTP",
-  "pluginId": "http",
-  "description": "Basic HTTP delivery pluing",
-  "version": "0.1.0",
+  "pluginId": "stedi-http",
+  "description": "Stedi HTTP delivery plugin",
+  "version": "0.2.0",
   "credentialsSchema": {
     "type": "object",
-    "allowAdditionalProperties": true,
     "properties": {
-      "baseURL": {
-        "type": "string"
+      "headers": {
+        "type": "object"
       }
     },
-    "required": ["baseURL"]
+    "required": []
   },
   "model": [
     {
-      "namespace": "default",
+      "namespace": "http",
       "operations": {
         "deliver": {
           "implementedBy": {
             "type": "function",
-            "functionName": "deliver"
+            "functionName": "stedi-http-deliver-v1"
           },
           "input": {
-            "inputSchema": {},
             "parametersSchema": {
               "type": "object",
               "properties": {
+                "url": {
+                  "type": "string"
+                },
                 "method": {
                   "type": "string",
                   "enum": ["GET", "POST", "PUT", "DELETE", "PATCH"]
-                },
-                "path": {
-                  "type": "string"
                 },
                 "headers": {
                   "type": "object",
@@ -46,11 +44,11 @@
                     "type": "string"
                   }
                 }
-              }
+              },
+              "required": ["method", "url"]
             }
           },
           "output": {
-            "outputSchema": {},
             "deduplication": {
               "enabled": false
             }

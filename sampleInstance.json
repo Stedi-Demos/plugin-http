@@ -1,7 +1,7 @@
 {
-  "instanceId": "brandx",
+  "instanceId": "sample",
   "credentials": {
-    "accessToken": "smashcessToken"
+    "baseURL": "https://webhook.site"
   },
   "concurrencyGroups": [
     {
