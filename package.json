@@ -25,7 +25,7 @@
     "@stedi/sdk-client-identity": "0.4.50",
     "@stedi/sdk-client-mappings": "0.4.50",
     "@stedi/sdk-client-partners": "0.4.50",
-    "@stedi/sdk-client-queues": "^0.4.64",
+    "@stedi/sdk-client-queues": "0.4.65",
     "@stedi/sdk-client-sftp": "0.4.50",
     "@stedi/sdk-client-stash": "0.4.50",
     "@stedi/sdk-token-provider-aws-identity": "0.2.9",
