@@ -1,6 +1,6 @@
 {
   "name": "HTTP",
-  "pluginId": "stedi-http",
+  "pluginId": "http",
   "description": "Stedi HTTP delivery plugin",
   "version": "0.2.0",
   "credentialsSchema": {
