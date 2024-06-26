@@ -1,7 +1,12 @@
 {
   "instanceId": "sample",
   "credentials": {
-    "baseURL": "https://webhook.site"
+    "type": "OAUTH2",
+    "authorizationEndpoint": "https://accounts.spotify.com/api/token",
+    "authorizationMethod": "POST",
+    "clientId": "20f4010db132455491cec124da34df20",
+    "clientSecret": "47a3ae87bbde41cda9c821875dad7be6",
+    "grantType": "client_credentials"
   },
   "concurrencyGroups": [
     {
