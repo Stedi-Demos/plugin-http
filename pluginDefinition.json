@@ -4,13 +4,68 @@
   "description": "Stedi HTTP delivery plugin",
   "version": "0.2.0",
   "credentialsSchema": {
-    "type": "object",
-    "properties": {
-      "headers": {
-        "type": "object"
+    "oneOf": [
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["NONE"]
+          }
+        },
+        "required": ["type"],
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["HEADER"]
+          },
+          "headers": {
+            "type": "object"
+          }
+        },
+        "required": ["type", "headers"],
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["OAUTH2"]
+          },
+          "authorizationEndpoint": {
+            "type": "string"
+          },
+          "authorizationMethod": {
+            "type": "string",
+            "enum": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientSecret": {
+            "type": "string"
+          },
+          "grantType": {
+            "type": "string",
+            "enum": ["client_credentials"]
+          }
+        },
+        "required": [
+          "type",
+          "authorizationEndpoint",
+          "authorizationMethod",
+          "clientId",
+          "clientSecret",
+          "grantType"
+        ],
+        "additionalProperties": false
       }
-    },
-    "required": []
+    ]
   },
   "model": [
     {
